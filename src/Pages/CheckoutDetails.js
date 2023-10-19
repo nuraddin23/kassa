@@ -19,7 +19,7 @@ const CheckoutDetails = () => {
 
   return (
     <div>
-      <h1>Checkout Details for {productId}</h1>
+      <h1>Checkout Details for  {productId}</h1>
       <h2>Profit History</h2>
       <ul>
         {checkoutProfits.map((profit) => (
