@@ -5,7 +5,8 @@ import Kassa from "./Pages/Kassa";
 import Users from "./Pages/Users";
 import Kirim from "./Pages/Kirim";
 import Chiqim from "./Pages/Chiqim";
-import CheckoutDetails from "./Pages/CheckoutDetails";
+import CheckoutDetails from "./Components/CheckoutDetails";
+import UserDetails from "./Components/UserDetails";
 
 const App = () => {
   return (
@@ -17,7 +18,8 @@ const App = () => {
           <Route path="/users" element={<Users />} />
           <Route path="/kirim" element={<Kirim />} />
           <Route path="/chiqim" element={<Chiqim />} />
-          <Route path="/checkout/:productId" element={<CheckoutDetails />} />
+          <Route path="/checkout/:checkoutID" element={<CheckoutDetails />} />
+          <Route path="/user/:userID" element={<UserDetails />} /> 
         </Routes>
       </BrowserRouter>
     </div>

@@ -20,9 +20,17 @@ const checkoutSlice = createSlice({
       state.names = state.names.filter((checkout) => checkout.id !== action.payload);
       localStorage.setItem("Names_checheckout", JSON.stringify(state.names));
     },
+    editCheckoutName: (state, action) => {
+      const { id, name } = action.payload;
+      const checkout = state.names.find((checkout) => checkout.id === id);
+      if (checkout) {
+        checkout.name = name;
+        localStorage.setItem("Names_checheckout", JSON.stringify(state.names));
+      }
+    },
   },
 });
 
-export const { addCheckoutName, removeCheckoutName } = checkoutSlice.actions;
+export const { addCheckoutName, removeCheckoutName, editCheckoutName } = checkoutSlice.actions;
 
 export default checkoutSlice.reducer;
